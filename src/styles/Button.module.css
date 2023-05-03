@@ -1,0 +1,11 @@
+.btn {
+  @apply w-40 md:w-48 h-10 md:h-12 grid place-content-center font-unineue-bold text-white rounded-sm tracking-wide transition-colors;
+}
+
+.btn__primary {
+  @apply bg-primary hover:bg-secondary;
+}
+
+.btn__secondary {
+  @apply bg-secondary hover:bg-primary;
+}

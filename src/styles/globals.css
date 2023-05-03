@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply max-w-[100vw] overflow-x-hidden overscroll-y-none !scroll-smooth;
+  }
+
+  body {
+    @apply font-avenir-regular text-stone-700 antialiased bg-white;
+    text-rendering: optimizeLegibility;
+  }
+
+  *,
+  *::before,
+  *::after {
+    @apply box-border p-0 m-0;
+  }
+
+  *:focus {
+    @apply outline-none;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bebaspro-bold text-5xl text-stone-900;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply font-bebaspro-bold text-3xl md:text-4xl;
+  }
+
+  /* Fonts */
+
+  @font-face {
+    font-family: Avenir Next Regular;
+    src: url(../../public/fonts/avenir-next/AvenirNextLTPro-Regular.otf);
+  }
+
+  @font-face {
+    font-family: Avenir Next Bold;
+    src: url(../../public/fonts/avenir-next/AvenirNextLTPro-Bold.otf);
+  }
+
+  @font-face {
+    font-family: Bebas Neue;
+    src: url(../../public/fonts/BebasNeue-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: Bebas Neue Pro Thin;
+    src: url(../../public/fonts/bebas-neue-pro/BebasNeuePro-Thin.otf);
+  }
+
+  @font-face {
+    font-family: Bebas Neue Pro Light;
+    src: url(../../public/fonts/bebas-neue-pro/BebasNeuePro-Light.otf);
+  }
+
+  @font-face {
+    font-family: Bebas Neue Pro Book;
+    src: url(../../public/fonts/bebas-neue-pro/BebasNeuePro-Book.otf);
+  }
+
+  @font-face {
+    font-family: Bebas Neue Pro Regular;
+    src: url(../../public/fonts/bebas-neue-pro/BebasNeuePro-Regular.otf);
+  }
+
+  @font-face {
+    font-family: Bebas Neue Pro Bold;
+    src: url(../../public/fonts/bebas-neue-pro/BebasNeuePro-Bold.otf);
+  }
+
+  @font-face {
+    font-family: Salaryman;
+    src: url(../../public/fonts/Salaryman.ttf);
+  }
+
+  @font-face {
+    font-family: UniNeue thin;
+    src: url(../../public/fonts/uni-neue/UniNeue-Thin.otf);
+  }
+  
+  @font-face {
+    font-family: UniNeue light;
+    src: url(../../public/fonts/uni-neue/UniNeue-Light.otf);
+  }
+
+  @font-face {
+    font-family: UniNeue book;
+    src: url(../../public/fonts/uni-neue/UniNeue-Book.otf);
+  }
+
+  @font-face {
+    font-family: UniNeue regular;
+    src: url(../../public/fonts/uni-neue/UniNeue-Regular.otf);
+  }
+
+  @font-face {
+    font-family: UniNeue bold;
+    src: url(../../public/fonts/uni-neue/UniNeue-Bold.otf);
+  }
+
+  @font-face {
+    font-family: UniNeue heavy;
+    src: url(../../public/fonts/uni-neue/UniNeue-Heavy.otf);
+  }
+
+  @font-face {
+    font-family: UniNeue black;
+    src: url(../../public/fonts/uni-neue/UniNeue-Black.otf);
+  }
+}
