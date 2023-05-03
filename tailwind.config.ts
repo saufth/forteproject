@@ -25,7 +25,7 @@ const sizingConfig = {
     '9/20': '45%',
     '11/20': '55%'
   }
-}
+} as const
 
 export default {
   content: [
@@ -82,12 +82,77 @@ export default {
         70: '70'
       },
       fontSize: {
-        md: ['0.938rem', { lineHeight: '1.375rem' }],
-        '4.5xl': ['2.5rem', { lineHeight: '1rem' }]
+        md: ['0.938rem', { lineHeight: '1.375rem' }], // 15px
+        '4.5xl': ['2.5rem', { lineHeight: '1rem' }] // 40px
       },
       backgroundImage: {
         hero: "url('/images/sections/hero-bg.jpg')",
-        'hero-sm': "url('/images/sections/hero-bg-sm.jpg')"
+        'hero-sm': "url('/images/sections/hero-bg-sm.jpg')",
+        hero2: "url('/images/sections/hero2-bg.jpg')",
+        'hero2-sm': "url('/images/sections/hero2-bg-sm.jpg')",
+        hero3: "url('/images/sections/hero3-bg.jpg')",
+        'hero3-sm': "url('/images/sections/hero3-bg-sm.jpg')"
+      },
+      animation: {
+        'tansition-1-3': 'tansition-1-3 24s infinite ease',
+        'tansition-2-3': 'tansition-2-3 24s infinite ease',
+        'tansition-3-3': 'tansition-3-3 24s infinite ease'
+      },
+      keyframes: {
+        'tansition-1-3': {
+          '0%': {
+            opacity: '1'
+          },
+          '23%': {
+            opacity: '1'
+          },
+          '33%': {
+            opacity: '0'
+          },
+          '90%': {
+            opacity: '0'
+          },
+          '100%': {
+            opacity: '1'
+          }
+        },
+        'tansition-2-3': {
+          '0%': {
+            opacity: '0'
+          },
+          '23%': {
+            opacity: '0'
+          },
+          '33%': {
+            opacity: '1'
+          },
+          '56%': {
+            opacity: '1'
+          },
+          '66%': {
+            opacity: '0'
+          },
+          '100%': {
+            opacity: '0'
+          }
+        },
+        'tansition-3-3': {
+          '0%': {
+            opacity: '0'
+          },
+          '56%': {
+            opacity: '0'
+          },
+          '66%': {
+            opacity: '1'
+          },
+          '90%': {
+            opacity: '1'
+          },
+          '100%': {
+            opacity: '0'
+          }
+        }
       }
     }
   },

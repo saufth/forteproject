@@ -32,7 +32,7 @@ export const SOLUTIONS_CONFIG: ReadonlyArray<Readonly<CardProps>> = [
   {
     ...SERVICES.materials,
     image: {
-      name: 'consulting.jpg',
+      name: 'materials.jpg',
       alt: `${organizationSlogan} ${SERVICES.materials.heading}`,
       ...SOLUTION_IMG_SIZE
     }
@@ -167,7 +167,7 @@ export const VALUES_CONFIG: ReadonlyArray<Readonly<ShowcaseProps>> = [
 export default function HomePage () {
   return (
     <PageLayout page='home'>
-      <section className='h-2xl md:h-3xl overflow-hidden bg-hero-sm md:bg-hero bg-cover bg-center bg-no-repeat'>
+      <section className='h-2xl md:h-3xl relative overflow-hidden'>
         <div className='max-w-8xl h-full px-[5%] mx-auto pt-24 space-y-8'>
           <div className='md:w-2xl mt-16 md:mt-24 space-y-4'>
             <Image
@@ -197,6 +197,11 @@ export default function HomePage () {
               </LinkButton>
             </div>
           </div>
+        </div>
+        <div className='absolute inset-0 -z-10 [&>div]:w-full [&>div]:h-full [&>div]:absolute [&>div]:inset-0 [&>div]:bg-cover [&>div]:bg-center [&>div]:bg-no-repeat'>
+          <div className='bg-hero-sm md:bg-hero animate-tansition-1-3' />
+          <div className='bg-hero2-sm md:bg-hero2 animate-tansition-2-3' />
+          <div className='bg-hero3-sm md:bg-hero3 animate-tansition-3-3' />
         </div>
       </section>
 
