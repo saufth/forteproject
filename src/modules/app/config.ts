@@ -20,7 +20,7 @@ export const organizationSlogan = `${organization} ${slogan}`
 export const description = 'Proyectos con cimientos fuertes'
 
 /** The email of the organizacion */
-export const email = 'contacto@forte-project.com'
+export const email = 'contacto@forteproject.mx'
 
 /** Organization services */
 export const SERVICES: HeaderListConfig = {
