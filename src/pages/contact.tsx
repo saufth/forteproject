@@ -54,7 +54,7 @@ export default function ContactPage () {
           >
             <div>
               <input
-                className='w-full px-4 py-3 bg-stone-200 rounded-xl resize-none'
+                className='w-full px-4 py-3 bg-stone-200 rounded-sm resize-none'
                 type='text'
                 name='contact_name'
                 id='contact_name'
@@ -64,7 +64,7 @@ export default function ContactPage () {
             </div>
             <div>
               <input
-                className='w-full px-4 py-3 bg-stone-200 rounded-xl resize-none'
+                className='w-full px-4 py-3 bg-stone-200 rounded-sm resize-none'
                 type='email'
                 name='contact_email'
                 id='contact_email'
@@ -74,7 +74,7 @@ export default function ContactPage () {
             </div>
             <div>
               <textarea
-                className='w-full px-4 py-3 bg-stone-200 rounded-xl resize-none'
+                className='w-full px-4 py-3 bg-stone-200 rounded-sm resize-none'
                 name='contact_description'
                 id='contact_description'
                 rows={1}
