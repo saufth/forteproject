@@ -29,11 +29,11 @@ export default function Navbar () {
         <div className='max-w-8xl h-24 px-[5%] md:px-[7%] md:py-4 lg:py-5 mx-auto flex justify-between items-center'>
           <NextLink href={NAV.home.href} onClick={closeToggle}>
             <Image
-              className='w-auto h-6 md:h-7'
-              src='/images/logoname.svg'
+              className='w-auto h-10 md:h-12'
+              src='/images/logomark.svg'
               alt={logoAlt}
-              width={36}
-              height={394}
+              width={44}
+              height={48}
               priority
             />
           </NextLink>

@@ -12,10 +12,7 @@ const mailto = `mailto:${email}`
  */
 export default function LinkEmail () {
   return (
-    <Link
-      href={mailto}
-      underline
-    >
+    <Link href={mailto} underline>
       {email}
     </Link>
   )

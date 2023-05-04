@@ -2,7 +2,6 @@
 import About from '@/components/sections/About'
 import CallToAction from '@/components/navigation/LinkToAction'
 import Card from '@/components/data-display/Card'
-import Image from 'next/image'
 import LinkButton from '@/components/navigation/core/LinkButton'
 import PageLayout from '@/components/layout/PageLayout'
 // Config
@@ -11,7 +10,6 @@ import {
   SERVICES,
   VALUES,
   description,
-  organization,
   organizationSlogan
 } from '@/modules/app/config'
 import { IMG_EXT } from '@/modules/data-display/config'
@@ -176,13 +174,9 @@ export default function HomePage () {
       <section className='h-2xl md:h-3xl relative overflow-hidden'>
         <div className='max-w-8xl h-full px-[5%] mx-auto pt-24 space-y-8'>
           <div className='md:w-2xl mt-16 md:mt-24 space-y-4'>
-            <Image
-              src='/images/slogan.svg'
-              alt={`${organization} slogan`}
-              className='w-auto h-2 md:h-3'
-              width={297}
-              height={12}
-            />
+            <div className='font-avenir-bold text-sm md:text-lg text-secondary'>
+              {organizationSlogan.toUpperCase()}
+            </div>
             <div className='space-y-5'>
               <h1>
                 {description.toUpperCase()}
