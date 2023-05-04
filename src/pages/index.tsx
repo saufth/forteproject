@@ -18,9 +18,6 @@ import { IMG_EXT } from '@/modules/data-display/config'
 // Types
 import type { CardProps, ImageConfig, ShowcaseProps } from '@/types/data-dislay'
 
-/** The hero header description */
-export const heroDescription = 'Lorem ipsum dolor sit amet, ipsum sit amet dolor, lorem ipsum dolor sit amet, ipsum sit amet dolor.'
-
 /** Solutions name list */
 const solutionsNameList: ReadonlyArray<string> = Object.keys(SERVICES)
 
@@ -191,7 +188,7 @@ export default function HomePage () {
                 {description.toUpperCase()}
               </h1>
               <p className='font-avenir-bold md:text-lg'>
-                {heroDescription}
+                Planeación · Estrategia · Tactica
               </p>
             </div>
           </div>
@@ -216,9 +213,16 @@ export default function HomePage () {
 
       <section id='solutions' className='px-[5%] py-24 bg-stone-50'>
         <div className='space-y-14'>
-          <h2 className='md:w-xl'>
-            NUESTRAS SOLUCIONES LOREM IPSUM DOLOR SIT AMET
-          </h2>
+          <div className='md:w-2xl space-y-3'>
+            <h2>
+              NUESTRAS SOLUCIONES
+            </h2>
+            <p>
+              Estamos 100% comprometidos con las necesidades a corto, mediano y largo plazo de
+              nuestros clientes, buscamos siempre superar las expectativas, generando soluciones
+              a la medida de todas sus necesidades.
+            </p>
+          </div>
           <div className='w-full grid grid-cols-1 sm:grid-cols-2 gap-x-4 lg:gap-x-5 gap-y-20 items-start justify-start'>
             {SOLUTIONS_CONFIG.map((solution, key) => (
               <Card
@@ -235,7 +239,7 @@ export default function HomePage () {
       <About
         id='values'
         heading='NUESTROS VALORES'
-        description='Nuestros valores son los principios profesionales que guían las acciones y decisiones que tomamos. Representan la esencia de la empresa y la forma en que nos relacionamos con nuestros empleados, clientes, proveedores y comunidad.'
+        description='Somos una empresa con valores y principios sólidos. Al trabajar de la mano con nuestros clientes nos aseguramos de que tengan la mejor experiencia, guiándolos en la consecución de los objetivos en cada proyecto que emprenden.'
         showcases={VALUES_CONFIG}
       />
     </PageLayout>

@@ -17,7 +17,7 @@ export const slogan = 'Worldwide'
 export const organizationSlogan = `${organization} ${slogan}`
 
 /** The head desciption of the application */
-export const description = 'Lorem ipsum dolor sit amet, Ipsum sit amet dolor.'
+export const description = 'Proyectos con cimientos fuertes'
 
 /** The email of the organizacion */
 export const email = 'contacto@forte-project.com'
@@ -66,27 +66,27 @@ export const SERVICES: HeaderListConfig = {
 export const VALUES: HeaderListConfig = {
   honesty: {
     heading: 'Honestidad',
-    description: 'Nos esforzamos por establecer relaciones a largo plazo con nuestros clientes y colaboradores, basadas en la confianza y el respeto mutuo. Promovemos la integridad en todas las áreas de nuestra empresa.'
+    description: 'Honestidad Nos esforzamos por establecer relaciones a largo plazo con nuestros clientes y colaboradores, basadas en la confianza y el respeto mutuo. Promovemos la integridad en todas las áreas de nuestra empresa.'
   },
   transparency: {
     heading: 'Transparencia',
-    description: 'Nos comprometemos a ser claros y honestos en todas nuestras relaciones comerciales y a proporcionar a nuestros clientes información precisa y detallada sobre nuestros productos y servicios, ya que para nosotros la transparencia es la base de cualquier relación duradera y exitosa.'
+    description: 'Transparencia Nos comprometemos a ser claros y honestos en todas nuestras relaciones comerciales y a proporcionar a nuestros clientes información precisa y detallada sobre nuestros productos y servicios, ya que para nosotros la transparencia es la base de cualquier relación duradera y exitosa.'
   },
   quality: {
     heading: 'Calidad',
-    description: 'Trabajamos en cumplir con los más altos estándares de calidad en cada etapa de nuestro trabajo, desde el diseño hasta la ejecución de cada proyecto, utilizando materiales y equipos de alta gama para garantizar la durabilidad y el rendimiento de estos.'
+    description: 'Calidad Trabajamos en cumplir con los más altos estándares de calidad en cada etapa de nuestro trabajo, desde el diseño hasta la ejecución de cada proyecto, utilizando materiales y equipos de alta gama para garantizar la durabilidad y el rendimiento de estos.'
   },
   commitment: {
     heading: 'Compromiso',
-    description: 'Perseveramos en cumplir con los plazos y presupuestos establecidos en cada proyecto, y en superar las expectativas de nuestros clientes, brindando soluciones rápidas y efectivas a cualquier problema que pueda surgir.'
+    description: 'Compromiso Perseveramos en cumplir con los plazos y presupuestos establecidos en cada proyecto, y en superar las expectativas de nuestros clientes, brindando soluciones rápidas y efectivas a cualquier problema que pueda surgir.'
   },
   responsability: {
     heading: 'Responsabilidad social',
-    description: 'Progresamos como compañía contribuyendo positivamente en las comunidades donde operamos, mediante programas de responsabilidad social corporativa y apoyo a organizaciones sin fines de lucro.'
+    description: 'Responsabilidad social Progresamos como compañía contribuyendo positivamente en las comunidades donde operamos, mediante programas de responsabilidad social corporativa y apoyo a organizaciones sin fines de lucro.'
   },
   teamwork: {
     heading: 'Trabajo en equipo',
-    description: 'Nos aseguramos de fomentar un ambiente de comunicación abierta, donde cada miembro del equipo se sienta valorado y motivado. Colaboramos en la consecución de nuestros objetivos, y nos apoyamos mutuamente para superar cualquier obstáculo que se presente en el camino.'
+    description: 'Trabajo en equipo Nos aseguramos de fomentar un ambiente de comunicación abierta, donde cada miembro del equipo se sienta valorado y motivado. Colaboramos en la consecución de nuestros objetivos, y nos apoyamos mutuamente para superar cualquier obstáculo que se presente en el camino.'
   }
 }
 

@@ -22,7 +22,7 @@ export default function Footer () {
         <div className='md:hidden'>
           <CallToAction />
         </div>
-        <div className='flex flex-col md:flex-row items-center gap-4 text-xs md:text-sm text-center md:text-left text-secondary'>
+        <div className='flex flex-col md:flex-row items-center gap-4 text-xs md:text-sm text-center md:text-left text-stone-500'>
           <NextLink href='/'>
             <Image
               src='/images/logomark.svg'
