@@ -13,7 +13,7 @@ export default function Card ({ heading, description, image }: CardProps) {
   const imageSrc = `/images/sections/${image.name}`
 
   return (
-    <div className='w-full space-y-8'>
+    <article className='w-full space-y-8'>
       <Image
         src={imageSrc}
         alt={image.alt}
@@ -21,12 +21,12 @@ export default function Card ({ heading, description, image }: CardProps) {
         width={image.width}
         height={image.height}
       />
-      <div className='space-y-3'>
+      <header className='space-y-3'>
         <h3 className='pb-6 border-b border-b-stone-300'>
           {heading.toUpperCase()}
         </h3>
         {description ? <p className='text-stone-500'>{description}</p> : null}
-      </div>
-    </div>
+      </header>
+    </article>
   )
 }

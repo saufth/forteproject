@@ -6,9 +6,9 @@ import type { SizeStyleConfig } from '@/types/sizing'
 
 /** The Tagline component size style configuration */
 const SIZE_STYLES: SizeStyleConfig = {
-  sm: 'text-sm',
-  md: 'text-lg',
-  lg: 'text-xl'
+  sm: 'text-sm md:text-md',
+  md: 'text-md md:text-lg',
+  lg: 'font-avenir-bold text-base md:text-lg'
 }
 
 /**
@@ -20,7 +20,7 @@ const SIZE_STYLES: SizeStyleConfig = {
  * @default size 'md'
  */
 export default function Tagline ({ children, size = SIZES.md }: TaglineProps) {
-  const taglineSTyle = `text-sky-700 leading-none ${SIZE_STYLES[size]}`
+  const taglineSTyle = `text-stone-700 leading-none ${SIZE_STYLES[size]}`
   return (
     <p className={taglineSTyle}>
       {children}

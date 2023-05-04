@@ -15,6 +15,8 @@ import {
 import { IMG_EXT } from '@/modules/data-display/config'
 // Types
 import type { CardProps, ImageConfig, ShowcaseProps } from '@/types/data-dislay'
+import Tagline from '@/components/data-display/core/Tagline'
+import Header from '@/components/data-display/Header'
 
 /** Solutions name list */
 const solutionsNameList: ReadonlyArray<string> = Object.keys(SERVICES)
@@ -174,9 +176,9 @@ export default function HomePage () {
       <section className='h-2xl md:h-3xl relative overflow-hidden'>
         <div className='max-w-8xl h-full px-[5%] mx-auto pt-24 space-y-8'>
           <div className='md:w-2xl mt-16 md:mt-24 space-y-4'>
-            <div className='font-avenir-bold text-sm md:text-lg text-secondary'>
+            <Tagline size='lg'>
               {organizationSlogan.toUpperCase()}
-            </div>
+            </Tagline>
             <div className='space-y-5'>
               <h1>
                 {description.toUpperCase()}
@@ -206,27 +208,22 @@ export default function HomePage () {
       </section>
 
       <section id='solutions' className='px-[5%] py-24 bg-stone-50'>
-        <div className='space-y-14'>
-          <div className='md:w-2xl space-y-3'>
-            <h2>
-              NUESTRAS SOLUCIONES
-            </h2>
-            <p>
-              Estamos 100% comprometidos con las necesidades a corto, mediano y largo plazo de
-              nuestros clientes, buscamos siempre superar las expectativas, generando soluciones
-              a la medida de todas sus necesidades.
-            </p>
-          </div>
-          <div className='w-full grid grid-cols-1 sm:grid-cols-2 gap-x-4 lg:gap-x-5 gap-y-20 items-start justify-start'>
+        <div className='space-y-24'>
+          <Header
+            heading='NUESTRAS SOLUCIONES'
+            description='Estamos 100% comprometidos con las necesidades a corto, mediano y largo plazo de nuestros clientes, buscamos siempre superar las expectativas, generando soluciones a la medida de todas sus necesidades.'
+          />
+          <ul className='w-full grid grid-cols-1 sm:grid-cols-2 gap-x-4 lg:gap-x-5 gap-y-20 items-start justify-start'>
             {SOLUTIONS_CONFIG.map((solution, key) => (
-              <Card
-                heading={solution.heading}
-                description={solution.description}
-                image={solution.image}
-                key={key}
-              />
+              <li key={key}>
+                <Card
+                  heading={solution.heading}
+                  description={solution.description}
+                  image={solution.image}
+                />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

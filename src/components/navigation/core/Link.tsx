@@ -17,8 +17,8 @@ const linkSizeStyles: SizeStyleConfig = {
 
 /** The link theme style configuration */
 const linkThemeStyles: ThemeStyleConfig = {
-  primary: 'text-stone-600 hover:text-sky-600',
-  secondary: 'text-white hover:text-sky-500'
+  primary: 'text-stone-600',
+  secondary: 'text-white'
 }
 
 /**
@@ -42,7 +42,7 @@ export default function Link ({
   const sizeStyle = linkSizeStyles[size]
   const themeStyle = linkThemeStyles[theme]
   const textStyle = underline ? 'underline' : ''
-  const linkStyle = `font-unineue-bold transition-colors ${sizeStyle} ${themeStyle} ${textStyle}`
+  const linkStyle = `font-unineue-bold hover:text-primary transition-colors ${sizeStyle} ${themeStyle} ${textStyle}`
 
   return (
     <NextLink

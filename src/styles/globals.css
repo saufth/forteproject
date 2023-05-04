@@ -36,11 +36,11 @@
   }
 
   h2 {
-    @apply text-4xl md:text-5xl;
+    @apply text-4xl md:text-6xl;
   }
 
   h3 {
-    @apply font-bebaspro-bold text-3xl md:text-4xl;
+    @apply text-3xl md:text-5xl;
   }
 
   /* Fonts */

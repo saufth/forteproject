@@ -4,8 +4,11 @@ import type { HeaderListConfig } from '@/types/data-dislay'
 /** The project author */
 export const author = 'Sauftdev'
 
+/** The application domain name */
+export const domain = process.env.NEXT_PUBLIC_DOMAIN
+
 /** The base URL of the aplication */
-export const baseUrl = process.env.NEXT_PUBLIC_HOST
+export const baseUrl = `https://${domain}/`
 
 /** The name of the organization */
 export const organization = 'Forte Project'
@@ -20,7 +23,7 @@ export const organizationSlogan = `${organization} ${slogan}`
 export const description = 'Proyectos con cimientos fuertes'
 
 /** The email of the organizacion */
-export const email = 'contacto@forteproject.mx'
+export const email = `contacto@${domain}`
 
 /** Organization services */
 export const SERVICES: HeaderListConfig = {

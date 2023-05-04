@@ -1,12 +1,14 @@
 // Components
 import CallToAction from '../navigation/LinkToAction'
 import Image from 'next/image'
+import Link from '../navigation/core/Link'
 import LinkEmail from '../navigation/LinkEmail'
 import NextLink from 'next/link'
 // Config
 import { logoAlt } from '@/modules/data-display/config'
 import { NAV_LIST } from '@/modules/navigation/config'
 import { copyright } from '@/modules/app/config'
+import { SIZES } from '@/modules/sizing/config'
 
 /**
  * The footer section of application
@@ -34,16 +36,19 @@ export default function Footer () {
           {copyright}
         </div>
       </div>
-      <nav className='w-full flex flex-col md:flex-row justify-between gap-4 text-sm text-center text-stone-600'>
-        {NAV_LIST.map((navItem, key) => (
-          <NextLink
-            className='last:hidden last:md:block'
-            href={navItem.href}
-            key={key}
-          >
-            {navItem.children}
-          </NextLink>
-        ))}
+      <nav>
+        <ul className='w-full flex flex-col md:flex-row justify-between gap-4 text-center'>
+          {NAV_LIST.map((navItem, key) => (
+            <li
+              className='last:hidden last:md:block'
+              key={key}
+            >
+              <Link href={navItem.href} size={SIZES.sm}>
+                {navItem.children}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </footer>
   )
