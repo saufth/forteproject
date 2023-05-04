@@ -94,9 +94,9 @@ export default {
         'hero3-sm': "url('/images/sections/hero3-bg-sm.jpg')"
       },
       animation: {
-        'tansition-1-3': 'tansition-1-3 24s infinite ease',
-        'tansition-2-3': 'tansition-2-3 24s infinite ease',
-        'tansition-3-3': 'tansition-3-3 24s infinite ease'
+        'tansition-1-3': 'tansition-1-3 20s infinite ease',
+        'tansition-2-3': 'tansition-2-3 20s infinite ease',
+        'tansition-3-3': 'tansition-3-3 20s infinite ease'
       },
       keyframes: {
         'tansition-1-3': {

@@ -1,5 +1,5 @@
 // Types
-import { Parent } from './layout'
+import type { Parent } from './layout'
 import type { Dimensionable, SizeProps } from './sizing'
 
 /** Header properties */
@@ -40,3 +40,12 @@ export interface ShowcaseProps extends CardProps {
 
 /** The tagline componen props */
 export type TaglineProps = Parent<string> & SizeProps
+
+/** Image extention type */
+export type ImageExt = 'svg' | 'jpg' | 'png'
+
+/** Used for section image configuration */
+export interface ImageConfig extends Readonly<Dimensionable> {
+  /** The image extention */
+  ext: Readonly<ImageExt>
+}

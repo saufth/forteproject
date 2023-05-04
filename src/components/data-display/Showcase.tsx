@@ -31,7 +31,7 @@ export default function Showcase ({ heading, description, image, reverse }: Show
           <Image
             src={imageSrc}
             alt={image.alt}
-            className='w-full h-auto rounded-[24px] md:rounded-3xl'
+            className='w-full h-auto rounded-sm'
             width={image.width}
             height={image.height}
           />

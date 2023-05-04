@@ -14,148 +14,157 @@ import {
   organization,
   organizationSlogan
 } from '@/modules/app/config'
+import { IMG_EXT } from '@/modules/data-display/config'
 // Types
-import type { Dimensionable } from '@/types/sizing'
-import type { CardProps, ShowcaseProps } from '@/types/data-dislay'
+import type { CardProps, ImageConfig, ShowcaseProps } from '@/types/data-dislay'
 
 /** The hero header description */
 export const heroDescription = 'Lorem ipsum dolor sit amet, ipsum sit amet dolor, lorem ipsum dolor sit amet, ipsum sit amet dolor.'
 
+/** Solutions name list */
+const solutionsNameList: ReadonlyArray<string> = Object.keys(SERVICES)
+
 /** The solution image size */
-export const SOLUTION_IMG_SIZE: Readonly<Dimensionable> = {
+export const SOLUTIONS_IMG_CONFIG: ImageConfig = {
   width: 620,
-  height: 467
+  height: 467,
+  ext: IMG_EXT.jpg
 }
 
 /** The solutions section configuration */
 export const SOLUTIONS_CONFIG: ReadonlyArray<Readonly<CardProps>> = [
   {
-    ...SERVICES.materials,
+    ...SERVICES[solutionsNameList[0]],
     image: {
-      name: 'materials.jpg',
-      alt: `${organizationSlogan} ${SERVICES.materials.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[0]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[0]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   },
   {
-    ...SERVICES.rent,
+    ...SERVICES[solutionsNameList[1]],
     image: {
-      name: 'business-model.jpg',
-      alt: `${organizationSlogan} ${SERVICES.rent.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[1]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[1]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   },
   {
-    ...SERVICES.engineering,
+    ...SERVICES[solutionsNameList[2]],
     image: {
-      name: 'business-strategy.jpg',
-      alt: `${organizationSlogan} ${SERVICES.engineering.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[2]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[2]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   },
   {
-    ...SERVICES.architecture,
+    ...SERVICES[solutionsNameList[3]],
     image: {
-      name: 'coaching.jpg',
-      alt: `${organizationSlogan} ${SERVICES.architecture.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[3]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[3]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   },
   {
-    ...SERVICES.maintenance,
+    ...SERVICES[solutionsNameList[4]],
     image: {
-      name: 'market-study.jpg',
-      alt: `${organizationSlogan} ${SERVICES.maintenance.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[4]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[4]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   },
   {
-    ...SERVICES.electric,
+    ...SERVICES[solutionsNameList[5]],
     image: {
-      name: 'business-strategy.jpg',
-      alt: `${organizationSlogan} ${SERVICES.electric.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[5]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[5]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   },
   {
-    ...SERVICES.hydraulic,
+    ...SERVICES[solutionsNameList[6]],
     image: {
-      name: 'coaching.jpg',
-      alt: `${organizationSlogan} ${SERVICES.hydraulic.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[6]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[6]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   },
   {
-    ...SERVICES.pavements,
+    ...SERVICES[solutionsNameList[7]],
     image: {
-      name: 'market-study.jpg',
-      alt: `${organizationSlogan} ${SERVICES.pavements.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[7]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[7]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   },
   {
-    ...SERVICES.supervison,
+    ...SERVICES[solutionsNameList[8]],
     image: {
-      name: 'second-opinion.jpg',
-      alt: `${organizationSlogan} ${SERVICES.supervison.heading}`,
-      ...SOLUTION_IMG_SIZE
+      name: `${solutionsNameList[8]}.${SOLUTIONS_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${SERVICES[solutionsNameList[8]].heading}`,
+      ...SOLUTIONS_IMG_CONFIG
     }
   }
 ]
+
+/** Solutions name list */
+const valuesNameList: ReadonlyArray<string> = Object.keys(VALUES)
+
 /** The size of the image */
-export const VALUES_IMG_SIZE: Readonly<Dimensionable> = {
+export const VALUES_IMG_CONFIG: ImageConfig = {
   width: 500,
-  height: 500
+  height: 500,
+  ext: IMG_EXT.svg
 }
 
 /** Our values section configuration */
 export const VALUES_CONFIG: ReadonlyArray<Readonly<ShowcaseProps>> = [
   {
-    ...VALUES.honesty,
+    ...VALUES[valuesNameList[0]],
     image: {
-      name: 'excellence.svg',
-      alt: `${organizationSlogan} ${VALUES.honesty.heading}`,
-      ...VALUES_IMG_SIZE
+      name: `${valuesNameList[0]}.${VALUES_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${VALUES[valuesNameList[0]].heading}`,
+      ...VALUES_IMG_CONFIG
     }
   },
   {
-    ...VALUES.transparency,
+    ...VALUES[valuesNameList[1]],
     image: {
-      name: 'integrity.svg',
-      alt: `${organizationSlogan} ${VALUES.transparency.heading}`,
-      ...VALUES_IMG_SIZE
+      name: `${valuesNameList[1]}.${VALUES_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${VALUES[valuesNameList[1]].heading}`,
+      ...VALUES_IMG_CONFIG
     }
   },
   {
-    ...VALUES.quality,
+    ...VALUES[valuesNameList[2]],
     image: {
-      name: 'innovation.svg',
-      alt: `${organizationSlogan} ${VALUES.quality.heading}`,
-      ...VALUES_IMG_SIZE
+      name: `${valuesNameList[2]}.${VALUES_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${VALUES[valuesNameList[2]].heading}`,
+      ...VALUES_IMG_CONFIG
     }
   },
   {
-    ...VALUES.commitment,
+    ...VALUES[valuesNameList[3]],
     image: {
-      name: 'commitment.svg',
-      alt: `${organizationSlogan} ${VALUES.commitment.heading}`,
-      ...VALUES_IMG_SIZE
+      name: `${valuesNameList[3]}.${VALUES_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${VALUES[valuesNameList[3]].heading}`,
+      ...VALUES_IMG_CONFIG
     }
   },
   {
-    ...VALUES.responsability,
+    ...VALUES[valuesNameList[4]],
     image: {
-      name: 'teamwork.svg',
-      alt: `${organizationSlogan} ${VALUES.responsability.heading}`,
-      ...VALUES_IMG_SIZE
+      name: `${valuesNameList[4]}.${VALUES_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${VALUES[valuesNameList[4]].heading}`,
+      ...VALUES_IMG_CONFIG
     }
   },
   {
-    ...VALUES.teamwork,
+    ...VALUES[valuesNameList[5]],
     image: {
-      name: 'responsability.svg',
-      alt: `${organizationSlogan} ${VALUES.teamwork.heading}`,
-      ...VALUES_IMG_SIZE
+      name: `${valuesNameList[5]}.${VALUES_IMG_CONFIG.ext}`,
+      alt: `${organizationSlogan} ${VALUES[valuesNameList[5]].heading}`,
+      ...VALUES_IMG_CONFIG
     }
   }
 ]
@@ -225,7 +234,8 @@ export default function HomePage () {
 
       <About
         id='values'
-        heading='NUESTROS VALORES LOREM IPSUM DOLOR SIT AMET'
+        heading='NUESTROS VALORES'
+        description='Nuestros valores son los principios profesionales que guían las acciones y decisiones que tomamos. Representan la esencia de la empresa y la forma en que nos relacionamos con nuestros empleados, clientes, proveedores y comunidad.'
         showcases={VALUES_CONFIG}
       />
     </PageLayout>
