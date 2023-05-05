@@ -36,7 +36,7 @@ export default function PageLayout ({ children, page } : PageLayoutProps) {
   return (
     <>
       <Head>
-        <meta httpEquiv='content-language' content='en-mx' key='lang' />
+        <meta httpEquiv='content-language' content='es-mx' key='lang' />
         <title key='title'>{pageTitle}</title>
         <meta name='author' content={author} key='author' />
         <meta name='description' content={description} key='description' />
