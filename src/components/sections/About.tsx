@@ -12,7 +12,7 @@ import type { AboutProps } from '@/types/sections'
  */
 export default function About ({ id, heading, description, tagline, showcases }: AboutProps) {
   return (
-    <section id={id} className='max-w-8xl px-[5%] mx-auto py-24 space-y-24'>
+    <section id={id} className='max-w-8xl px-[5%] mx-auto py-24 space-y-24 bg-stone-50'>
       <Header heading={heading} description={description} />
       <ul className='pb-12 md:pb-56 space-y-24 md:space-y-64'>
         {showcases.map((showcase, key) => (

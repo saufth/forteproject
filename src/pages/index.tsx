@@ -2,8 +2,11 @@
 import About from '@/components/sections/About'
 import CallToAction from '@/components/navigation/LinkToAction'
 import Card from '@/components/data-display/Card'
+import Header from '@/components/data-display/Header'
+import Image from 'next/image'
 import LinkButton from '@/components/navigation/core/LinkButton'
 import PageLayout from '@/components/layout/PageLayout'
+import Tagline from '@/components/data-display/core/Tagline'
 // Config
 import { NAV } from '@/modules/navigation/config'
 import {
@@ -15,8 +18,6 @@ import {
 import { IMG_EXT } from '@/modules/data-display/config'
 // Types
 import type { CardProps, ImageConfig, ShowcaseProps } from '@/types/data-dislay'
-import Tagline from '@/components/data-display/core/Tagline'
-import Header from '@/components/data-display/Header'
 
 /** Solutions name list */
 const solutionsNameList: ReadonlyArray<string> = Object.keys(SERVICES)
@@ -226,6 +227,21 @@ export default function HomePage () {
           </ul>
         </div>
       </section>
+
+      <div className='px-[5%] py-36 flex flex-col items-center gap-y-10'>
+        <Image
+          src='/images/logo.svg'
+          alt={organizationSlogan}
+          className='w-auto h-10 md:h-14'
+          width={592}
+          height={85}
+        />
+        <div className='max-w-4xl text-center text-stone-500 md:text-lg'>
+          Nos dedicamos a brindar soluciones integrales en el ámbito de la construcción, venta de
+          materiales y mantenimiento industrial, con un enfoque en la personalización de nuestros
+          servicios para satisfacer las necesidades específicas de nuestros clientes.
+        </div>
+      </div>
 
       <About
         id='values'
