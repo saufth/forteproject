@@ -1,20 +1,23 @@
 // Components
 import Button from '@/components/input/core/Button'
+import PageLayout from '@/components/layout/PageLayout'
 import Tagline from '@/components/data-display/core/Tagline'
 // React
-import { useRef } from 'react'
+import { useRef, FormEvent, useState } from 'react'
 // Services
 import emailjs from '@emailjs/browser'
-// Type
-import type { FormEvent } from 'react'
-import PageLayout from '@/components/layout/PageLayout'
 
 /**
 * The contact section of application
 * @returns The Contact section component
 */
 export default function ContactPage () {
+  const [modalMessage, setModalMessage] = useState<string>('')
   const formRef = useRef<HTMLFormElement>(null)
+  const dialogRef = useRef<HTMLDialogElement>(null)
+
+  const openModal = () => { dialogRef.current?.showModal() }
+  const closeModal = () => { dialogRef.current?.close() }
 
   const sendEmail = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -28,9 +31,11 @@ export default function ContactPage () {
         formRef.current,
         String(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY)
       ).then(() => {
-        alert('Hemos recibido tu mensaje')
+        openModal()
+        setModalMessage('Hemos recibido tu mensaje')
       }, () => {
-        alert('Lo sentimos, hubo un problema al intentar enviar el mensaje')
+        openModal()
+        setModalMessage('Lo sentimos, hubo un problema al intentar enviar el mensaje')
       })
     }
   }
@@ -91,6 +96,17 @@ export default function ContactPage () {
           </form>
         </div>
       </section>
+      <dialog className='p-5 m-auto space-y-3 flex flex-col' ref={dialogRef}>
+        <div className='pb-5 text-lg text-stone-500 border-b border-b-stone-300'>
+          {modalMessage}
+        </div>
+        <button
+          className='font-avenir-bold text-primary self-end'
+          onClick={closeModal}
+        >
+          Cerrar
+        </button>
+      </dialog>
     </PageLayout>
   )
 }
