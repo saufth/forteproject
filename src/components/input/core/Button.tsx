@@ -19,13 +19,14 @@ export default function Button ({
   children,
   action,
   type = BUTTON_TYPES.button,
-  theme = THEME.primary
+  theme = THEME.primary,
+  disabled
 }: ButtonProps) {
   const themeStyle = theme === THEME.primary ? styles.btn__primary : styles.btn__secondary
   const btnStyle = `${styles.btn} ${themeStyle}`
 
   return (
-    <button onClick={action} type={type}>
+    <button onClick={action} type={type} disabled={disabled}>
       <div className={btnStyle}>
         {children}
       </div>

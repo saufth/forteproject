@@ -23,6 +23,8 @@ export type ButtonTypesConfig = Readonly<Record<ButtonTypes, ButtonTypes>>
 export interface ButtonProps extends Parent<string>, Actionable, Themeable {
   /** The button type */
   type?: ButtonTypes
+  /** Used for disable or enable the button */
+  disabled?: boolean
 }
 
 /** Open-Closed state property */

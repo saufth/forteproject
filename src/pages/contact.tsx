@@ -12,30 +12,44 @@ import emailjs from '@emailjs/browser'
 * @returns The Contact section component
 */
 export default function ContactPage () {
-  const [modalMessage, setModalMessage] = useState<string>('')
+  // The modal state
+  const [modalMessageState, setModalMessageState] = useState<string>('')
+  // The send button state
+  const [sendButtonState, setSendButtonState] = useState<boolean>(false)
+  // The form reference
   const formRef = useRef<HTMLFormElement>(null)
+  // The modal reference
   const dialogRef = useRef<HTMLDialogElement>(null)
 
+  /** Open the modal */
   const openModal = () => { dialogRef.current?.showModal() }
+  /** Close the modal */
   const closeModal = () => { dialogRef.current?.close() }
 
+  /**
+   * Used for send emails from contact form
+   * @param event The form event used for prevent default
+   */
   const sendEmail = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const node = formRef.current
 
     if (node) {
+      setSendButtonState(true)
       emailjs.sendForm(
         String(process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY),
         String(process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY),
         formRef.current,
         String(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY)
       ).then(() => {
+        setModalMessageState('Hemos recibido tu mensaje')
         openModal()
-        setModalMessage('Hemos recibido tu mensaje')
+        setSendButtonState(false)
       }, () => {
+        setModalMessageState('Lo sentimos, hubo un problema al intentar enviar el mensaje')
         openModal()
-        setModalMessage('Lo sentimos, hubo un problema al intentar enviar el mensaje')
+        setSendButtonState(false)
       })
     }
   }
@@ -89,19 +103,19 @@ export default function ContactPage () {
               />
             </div>
             <div className='pt-6 flex justify-center'>
-              <Button type='submit'>
+              <Button type='submit' disabled={sendButtonState}>
                 Enviar
               </Button>
             </div>
           </form>
         </div>
       </section>
-      <dialog className='p-5 m-auto space-y-3 flex flex-col' ref={dialogRef}>
+      <dialog className='p-5 m-auto space-y-3' ref={dialogRef}>
         <div className='pb-5 text-lg text-stone-500 border-b border-b-stone-300'>
-          {modalMessage}
+          {modalMessageState}
         </div>
         <button
-          className='font-avenir-bold text-primary self-end'
+          className='font-avenir-bold text-primary float-right'
           onClick={closeModal}
         >
           Cerrar
