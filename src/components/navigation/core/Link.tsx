@@ -11,8 +11,8 @@ import { ThemeStyleConfig } from '@/types/theme'
 /** The link size style configuration */
 const linkSizeStyles: SizeStyleConfig = {
   sm: 'text-sm',
-  md: 'text-lg',
-  lg: 'text-xl'
+  md: 'font-avenir-bold text-sm',
+  lg: 'font-avenir-bold text-2xl'
 }
 
 /** The link theme style configuration */
@@ -42,7 +42,7 @@ export default function Link ({
   const sizeStyle = linkSizeStyles[size]
   const themeStyle = linkThemeStyles[theme]
   const textStyle = underline ? 'underline' : ''
-  const linkStyle = `font-unineue-bold hover:text-primary transition-colors ${sizeStyle} ${themeStyle} ${textStyle}`
+  const linkStyle = `hover:text-primary transition-colors ${sizeStyle} ${themeStyle} ${textStyle}`
 
   return (
     <NextLink

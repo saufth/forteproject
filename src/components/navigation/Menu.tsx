@@ -1,6 +1,6 @@
 // Components
 import CallToAction from './LinkToAction'
-import NextLink from 'next/link'
+import Link from './core/Link'
 import Tagline from '../data-display/core/Tagline'
 // Hooks
 import useDimensions from '../../modules/sizing/hooks/useDimensions'
@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 // Config
 import { NAV, navAriaLabel } from '@/modules/navigation/config'
 import { OC_STATE } from '@/modules/input/config'
+import { SIZES } from '@/modules/sizing/config'
 // Types
 import type { MenuProps } from '@/types/navigation'
 import type { OCState } from '@/types/input'
@@ -76,9 +77,9 @@ export default function Menu ({ isOpen, action }: MenuProps) {
 
         {[NAV.home, NAV.solutions, NAV.values, NAV.history].map((option, key) => (
           <div className='text-3xl md:text-4xl' onClick={action} key={key}>
-            <NextLink href={option.href}>
-              {option.children}
-            </NextLink>
+            <Link href={option.href} size={SIZES.lg}>
+              {option.children.toUpperCase()}
+            </Link>
           </div>
         ))}
 

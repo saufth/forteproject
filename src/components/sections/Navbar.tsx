@@ -42,7 +42,7 @@ export default function Navbar () {
           {[NAV.solutions, NAV.values, NAV.history].map(({ children, href }, key) => {
             return (
               <div className='hidden lg:block' key={key}>
-                <Link href={href} size={SIZES.sm}>
+                <Link href={href} size={SIZES.md}>
                   {children}
                 </Link>
               </div>
