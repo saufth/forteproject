@@ -1,34 +1,59 @@
 // Config
 import { organizationSlogan } from '../app/config'
 // Types
-import type { NavConfig } from '@/types/navigation'
+import type {
+  AppRouteConfig,
+  NavConfig,
+  Navigable,
+  PageRouteConfig,
+  SectionRouteConfig
+} from '@/types/navigation'
+
+/** The pages route names configuration */
+export const PAGE_ROUTES: PageRouteConfig = {
+  home: 'home',
+  history: 'history',
+  contact: 'contact'
+}
+
+/** The sections route names configuration */
+export const SECTION_ROUTES: SectionRouteConfig = {
+  solutions: 'solutions',
+  values: 'values'
+}
+
+/** The application route names configuration */
+export const APP_ROUTES: AppRouteConfig = {
+  ...PAGE_ROUTES,
+  ...SECTION_ROUTES
+}
 
 /** The main navigation configuration of the application */
 export const NAV: NavConfig = {
-  home: {
+  home: { // Page route
     children: 'Inicio',
-    href: '/'
+    href: '/' // The home reference always is '/'
   },
-  solutions: {
+  solutions: { // Section route
     children: 'Soluciones',
-    href: '/#solutions'
+    href: `/#${APP_ROUTES.solutions}`
   },
-  values: {
+  values: { // Section route
     children: 'Valores',
-    href: '/#values'
+    href: `/#${APP_ROUTES.values}`
   },
-  history: {
+  history: { // Page route
     children: 'Historia',
-    href: '/history'
+    href: `/${APP_ROUTES.history}`
   },
-  contact: {
+  contact: { // Page route
     children: 'Contáctanos',
-    href: '/contact'
+    href: `/${APP_ROUTES.contact}`
   }
 }
 
-/** The navigation configuration list */
-export const NAV_LIST = Object.values(NAV)
+/** The navigation list configuration */
+export const NAV_LIST: ReadonlyArray<Navigable> = Object.values(NAV)
 
 /** The link to action properties */
 export const linkToAction = NAV.contact

@@ -1,11 +1,13 @@
 // Components
 import PageLayout from '@/components/layout/PageLayout'
+// Config
+import { PAGE_ROUTES } from '@/modules/navigation/config'
 
 /** The History page of the application */
 export default function HistoryPage () {
   return (
-    <PageLayout page='history'>
-      <section id='history' className='px-[4%]'>
+    <PageLayout page={PAGE_ROUTES.history}>
+      <section className='px-[4%]'>
         <div className='max-w-8xl px-10 md:px-[9%] mx-auto my-32 space-y-6'>
           <h2>
             Historia y razón de ser

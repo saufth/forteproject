@@ -16,8 +16,8 @@ import { NAV } from '@/modules/navigation/config'
 import type { PageLayoutProps } from '../../types/layout'
 import type { PageRoute } from '@/types/navigation'
 
-/** The route names configuration */
-const PAGES_CONFIG: Readonly<Record<PageRoute, string>> = {
+/** The pages route name configuration */
+const PAGES_CONFIG: Readonly<Record<PageRoute, (PageRoute | '')>> = {
   home: '',
   history: 'history',
   contact: 'contact'

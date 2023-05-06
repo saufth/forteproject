@@ -8,14 +8,14 @@ import LinkButton from '@/components/navigation/core/LinkButton'
 import PageLayout from '@/components/layout/PageLayout'
 import Tagline from '@/components/data-display/core/Tagline'
 // Config
-import { NAV } from '@/modules/navigation/config'
+import { IMG_EXT } from '@/modules/data-display/config'
+import { NAV, PAGE_ROUTES, SECTION_ROUTES } from '@/modules/navigation/config'
 import {
   SERVICES,
   VALUES,
   description,
   organizationSlogan
 } from '@/modules/app/config'
-import { IMG_EXT } from '@/modules/data-display/config'
 // Types
 import type { CardProps, ImageConfig, ShowcaseProps } from '@/types/data-dislay'
 
@@ -173,7 +173,7 @@ export const VALUES_CONFIG: ReadonlyArray<Readonly<ShowcaseProps>> = [
 */
 export default function HomePage () {
   return (
-    <PageLayout page='home'>
+    <PageLayout page={PAGE_ROUTES.home}>
       <section className='h-2xl md:h-3xl relative overflow-hidden'>
         <div className='max-w-8xl h-full px-[5%] mx-auto pt-24 space-y-8'>
           <div className='md:w-2xl mt-16 md:mt-24 space-y-4'>
@@ -208,7 +208,7 @@ export default function HomePage () {
         </div>
       </section>
 
-      <section id='solutions' className='px-[5%] py-24 bg-stone-50'>
+      <section id={SECTION_ROUTES.solutions} className='px-[5%] py-24 bg-stone-50'>
         <div className='space-y-24'>
           <Header
             heading='NUESTRAS SOLUCIONES'
@@ -244,7 +244,7 @@ export default function HomePage () {
       </div>
 
       <About
-        id='values'
+        id={SECTION_ROUTES.values}
         heading='NUESTROS VALORES'
         description='Somos una empresa con valores y principios sólidos. Al trabajar de la mano con nuestros clientes nos aseguramos de que tengan la mejor experiencia, guiándolos en la consecución de los objetivos en cada proyecto que emprenden.'
         showcases={VALUES_CONFIG}

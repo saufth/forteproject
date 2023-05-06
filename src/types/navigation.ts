@@ -13,6 +13,15 @@ export type SectionRoute = 'solutions' | 'values'
 /** The main routes for application */
 export type AppRoute = PageRoute | SectionRoute
 
+/** Used for page routes configuration */
+export type PageRouteConfig = Readonly<Record<PageRoute, PageRoute>>
+
+/** Used for section routes configuration */
+export type SectionRouteConfig = Readonly<Record<SectionRoute, SectionRoute>>
+
+/** Used for application routes configuration */
+export type AppRouteConfig = Readonly<Record<AppRoute, AppRoute>>
+
 /** Specifes where to open the linked document */
 export type LinkTarget = '_blank' | '_self' | '_parent' | '_top' | 'framename'
 

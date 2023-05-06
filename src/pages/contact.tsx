@@ -6,6 +6,8 @@ import Tagline from '@/components/data-display/core/Tagline'
 import { useRef, FormEvent, useState } from 'react'
 // Services
 import emailjs from '@emailjs/browser'
+// Config
+import { PAGE_ROUTES } from '@/modules/navigation/config'
 
 /**
 * The contact section of application
@@ -15,7 +17,7 @@ export default function ContactPage () {
   // The modal state
   const [modalMessageState, setModalMessageState] = useState<string>('')
   // The send button state
-  const [sendButtonState, setSendButtonState] = useState<boolean>(false)
+  const [isSendButtonDisabled, setIsSendButtonDisabled] = useState<boolean>(false)
   // The form reference
   const formRef = useRef<HTMLFormElement>(null)
   // The modal reference
@@ -24,7 +26,10 @@ export default function ContactPage () {
   /** Open the modal */
   const openModal = () => { dialogRef.current?.showModal() }
   /** Close the modal */
-  const closeModal = () => { dialogRef.current?.close() }
+  const closeModal = () => {
+    dialogRef.current?.close()
+    setIsSendButtonDisabled(false)
+  }
 
   /**
    * Used for send emails from contact form
@@ -36,7 +41,7 @@ export default function ContactPage () {
     const node = formRef.current
 
     if (node) {
-      setSendButtonState(true)
+      setIsSendButtonDisabled(true)
       emailjs.sendForm(
         String(process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY),
         String(process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY),
@@ -45,17 +50,15 @@ export default function ContactPage () {
       ).then(() => {
         setModalMessageState('Hemos recibido tu mensaje')
         openModal()
-        setSendButtonState(false)
       }, () => {
         setModalMessageState('Lo sentimos, hubo un problema al intentar enviar el mensaje')
         openModal()
-        setSendButtonState(false)
       })
     }
   }
 
   return (
-    <PageLayout page='contact'>
+    <PageLayout page={PAGE_ROUTES.contact}>
       <section className='max-w-4xl px-[4%] my-32 mx-auto'>
         <div className='px-10 md:px-[9%] space-y-12'>
           <div className='space-y-3'>
@@ -103,7 +106,7 @@ export default function ContactPage () {
               />
             </div>
             <div className='pt-6 flex justify-center'>
-              <Button type='submit' disabled={sendButtonState}>
+              <Button type='submit' disabled={isSendButtonDisabled}>
                 Enviar
               </Button>
             </div>
