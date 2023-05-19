@@ -208,6 +208,31 @@ export default function HomePage () {
         </div>
       </section>
 
+      <section className='px-[5%] py-24 md:py-36 flex flex-col items-center gap-y-12 md:gap-y-16'>
+        <Image
+          src='/images/logo.svg'
+          alt={organizationSlogan}
+          className='w-auto h-10 md:h-14'
+          width={592}
+          height={85}
+        />
+        <h2 className='font-avenir-bold text-base text-center'>
+          Misión
+        </h2>
+        <div className='max-w-4xl text-center text-stone-500 md:text-lg'>
+          Nos dedicamos a brindar soluciones integrales en el ámbito de la construcción, venta de
+          materiales y mantenimiento industrial, con un enfoque en la personalización de nuestros
+          servicios para satisfacer las necesidades específicas de nuestros clientes.
+        </div>
+        <h2 className='font-avenir-bold text-base text-center'>
+          Visión
+        </h2>
+        <div className='max-w-4xl text-center text-stone-500 md:text-lg'>
+          Nuestra visión es ser una empresa líder en innovación y constante evolución, siendo
+          así la mejor opción para nuestros clientes en todo el mundo.
+        </div>
+      </section>
+
       <section id={SECTION_ROUTES.solutions} className='px-[5%] py-24 bg-stone-50'>
         <div className='space-y-24'>
           <Header
@@ -227,21 +252,6 @@ export default function HomePage () {
           </ul>
         </div>
       </section>
-
-      <div className='px-[5%] py-36 flex flex-col items-center gap-y-10'>
-        <Image
-          src='/images/logo.svg'
-          alt={organizationSlogan}
-          className='w-auto h-10 md:h-14'
-          width={592}
-          height={85}
-        />
-        <div className='max-w-4xl text-center text-stone-500 md:text-lg'>
-          Nos dedicamos a brindar soluciones integrales en el ámbito de la construcción, venta de
-          materiales y mantenimiento industrial, con un enfoque en la personalización de nuestros
-          servicios para satisfacer las necesidades específicas de nuestros clientes.
-        </div>
-      </div>
 
       <About
         id={SECTION_ROUTES.values}
